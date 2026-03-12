@@ -16,20 +16,44 @@
 - ✅ 详细的帮助和版本信息
 - ✅ 彩色日志输出
 
-## 📦 快速开始
+## 📦 安装
 
-### 安装
+### 方式 1：手动安装（推荐智能体使用）
 
 ```bash
-# 克隆仓库
-git clone https://github.com/YOUR_USERNAME/wsl-powershell.git
-cd wsl-powershell
+# 克隆到 OpenClaw 工作区的 skills 目录
+cd ~/.openclaw/workspace/skills
+git clone https://github.com/TYzzt/wsl-powershell.git
 
 # 添加执行权限
-chmod +x scripts/psctl.sh
+chmod +x wsl-powershell/scripts/psctl.sh
+```
 
-# (可选) 添加到 PATH
-export PATH="$PATH:$(pwd)/scripts"
+**智能体说明**：克隆后重启 OpenClaw 会话，技能会自动加载。
+
+### 方式 2：使用 ClawHub CLI
+
+```bash
+# 安装 ClawHub CLI
+npm install -g clawhub
+
+# 登录
+clawhub login
+
+# 安装技能
+clawhub install wsl-powershell
+```
+
+### 方式 3：直接下载
+
+```bash
+# 下载 ZIP
+wget https://github.com/TYzzt/wsl-powershell/archive/refs/heads/main.zip
+unzip main.zip -d ~/.openclaw/workspace/skills/
+mv ~/.openclaw/workspace/skills/wsl-powershell-main ~/.openclaw/workspace/skills/wsl-powershell
+
+# 添加执行权限
+chmod +x ~/.openclaw/workspace/skills/wsl-powershell/scripts/psctl.sh
 ```
 
 ### 基本用法
@@ -185,6 +209,39 @@ wslpath -u C:\\Users     # 输出：/mnt/c/Users
 - ⚠️ 测试命令前先确认影响范围
 - ⚠️ 不要执行来源不明的脚本
 
+## 🤖 智能体集成
+
+### 技能加载机制
+
+OpenClaw 会自动扫描以下目录的技能：
+
+1. `~/.openclaw/workspace/skills/` - 主工作区技能
+2. `./skills/` - 当前工作目录下的技能
+
+### 技能激活
+
+安装后**重启 OpenClaw 会话**，技能会自动加载。智能体可以：
+
+1. **直接调用脚本**：
+   ```bash
+   ~/.openclaw/workspace/skills/wsl-powershell/scripts/psctl.sh "PowerShell 命令"
+   ```
+
+2. **通过技能描述自动学习**：
+   - 智能体会读取 `SKILL.md` 了解技能功能
+   - 根据用户请求自动选择使用此技能
+
+3. **示例场景**：
+   - "查询 Windows 更新策略"
+   - "查看 Windows 进程列表"
+   - "获取系统信息"
+
+### 技能依赖
+
+- **WSL2** - Windows Subsystem for Linux 2
+- **Windows PowerShell** - 位于 `/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe`
+- **bash** - WSL 环境中的 shell
+
 ## 🤝 贡献
 
 欢迎提交 Issue 和 Pull Request！
@@ -206,5 +263,6 @@ wslpath -u C:\\Users     # 输出：/mnt/c/Users
 
 ## 📮 项目链接
 
-- Repository: [github.com/TYzzt/wsl-powershell](https://github.com/TYzzt/wsl-powershell)
-- Clone: `git clone https://github.com/TYzzt/wsl-powershell.git`
+- **Repository**: [github.com/TYzzt/wsl-powershell](https://github.com/TYzzt/wsl-powershell)
+- **Clone**: `git clone https://github.com/TYzzt/wsl-powershell.git`
+- **ClawHub**: `clawhub install wsl-powershell` (即将上线)
