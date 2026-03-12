@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Test files
+test_output/
+*.test.ps1
+
+# Credentials (NEVER commit these)
+*.env
+.env
+*.credentials
+secrets/
+
+# PowerShell profile
+Microsoft.PowerShell_profile.ps1
