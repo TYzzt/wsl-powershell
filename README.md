@@ -204,8 +204,7 @@ wslpath -u C:\\Users     # 输出：/mnt/c/Users
 - [WSL](https://docs.microsoft.com/en-us/windows/wsl/) - Windows Subsystem for Linux
 - [PowerShell](https://github.com/PowerShell/PowerShell) - PowerShell Core
 
-## 📮 联系方式
+## 📮 项目链接
 
-- 作者：Tao
-- GitHub: [@TYzzt](https://github.com/TYzzt)
 - Repository: [github.com/TYzzt/wsl-powershell](https://github.com/TYzzt/wsl-powershell)
+- Clone: `git clone https://github.com/TYzzt/wsl-powershell.git`
