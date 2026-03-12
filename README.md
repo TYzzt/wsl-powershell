@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![WSL](https://img.shields.io/badge/WSL-2-blue)](https://docs.microsoft.com/en-us/windows/wsl/)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue)](https://github.com/PowerShell/PowerShell)
+[![GitHub stars](https://img.shields.io/github/stars/TYzzt/wsl-powershell)](https://github.com/TYzzt/wsl-powershell)
 
 从 WSL (Windows Subsystem for Linux) 环境调用 Windows PowerShell，实现 Linux 到 Windows 的跨系统控制。
 
@@ -206,4 +207,5 @@ wslpath -u C:\\Users     # 输出：/mnt/c/Users
 ## 📮 联系方式
 
 - 作者：Tao
-- GitHub: [@zhaotao](https://github.com/zhaotao)
+- GitHub: [@TYzzt](https://github.com/TYzzt)
+- Repository: [github.com/TYzzt/wsl-powershell](https://github.com/TYzzt/wsl-powershell)
