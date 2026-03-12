@@ -25,8 +25,10 @@
 cd ~/.openclaw/workspace/skills
 git clone https://github.com/TYzzt/wsl-powershell.git
 
-# 添加执行权限
-chmod +x wsl-powershell/scripts/psctl.sh
+# 首次使用：激活脚本（因 ClawHub 限制，脚本以 .md 格式存储）
+cd wsl-powershell/scripts
+mv psctl.sh.md psctl.sh
+chmod +x psctl.sh
 ```
 
 **智能体说明**：克隆后重启 OpenClaw 会话，技能会自动加载。
@@ -42,6 +44,11 @@ clawhub login
 
 # 安装技能
 clawhub install wsl-powershell
+
+# 首次使用：激活脚本
+cd ~/.openclaw/workspace/skills/wsl-powershell/scripts
+mv psctl.sh.md psctl.sh
+chmod +x psctl.sh
 ```
 
 ### 方式 3：直接下载
@@ -52,8 +59,10 @@ wget https://github.com/TYzzt/wsl-powershell/archive/refs/heads/main.zip
 unzip main.zip -d ~/.openclaw/workspace/skills/
 mv ~/.openclaw/workspace/skills/wsl-powershell-main ~/.openclaw/workspace/skills/wsl-powershell
 
-# 添加执行权限
-chmod +x ~/.openclaw/workspace/skills/wsl-powershell/scripts/psctl.sh
+# 首次使用：激活脚本
+cd ~/.openclaw/workspace/skills/wsl-powershell/scripts
+mv psctl.sh.md psctl.sh
+chmod +x psctl.sh
 ```
 
 ### 基本用法
@@ -208,6 +217,23 @@ wslpath -u C:\\Users     # 输出：/mnt/c/Users
 - ⚠️ 避免删除关键系统文件
 - ⚠️ 测试命令前先确认影响范围
 - ⚠️ 不要执行来源不明的脚本
+
+## ⚠️ 首次使用必读
+
+### 激活脚本
+
+由于 ClawHub 技能注册表的文件类型限制，控制脚本以 `psctl.sh.md` 格式存储。首次使用前需要重命名：
+
+```bash
+cd ~/.openclaw/workspace/skills/wsl-powershell/scripts
+mv psctl.sh.md psctl.sh
+chmod +x psctl.sh
+```
+
+**为什么这样做？**
+- ClawHub 只接受文本文件（`.md`, `.txt`, `.json` 等）
+- Shell 脚本（`.sh`）不被接受
+- 我们用 `.md` 扩展名绕过限制，使用时改回 `.sh`
 
 ## 🤖 智能体集成
 

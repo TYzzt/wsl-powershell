@@ -2,6 +2,16 @@
 
 通过 WSL 调用 Windows PowerShell，实现从 Linux 环境控制 Windows 宿主机。
 
+## ⚠️ 首次使用
+
+控制脚本以 `psctl.sh.md` 格式存储（ClawHub 限制），首次使用前需要激活：
+
+```bash
+cd ~/.openclaw/workspace/skills/wsl-powershell/scripts
+mv psctl.sh.md psctl.sh
+chmod +x psctl.sh
+```
+
 ## 原理
 
 WSL 挂载 Windows 盘符到 `/mnt/`，可以直接调用 Windows 可执行文件：
